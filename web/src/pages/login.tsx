@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-// 1. Importando a biblioteca poderosa
-import { Toaster, toast } from "sonner";
+import { Toaster, toast } from "sonner"; // Library das Notificações, Toast
 
 export function Login() {
   const [email, setEmail] = useState("");
@@ -24,7 +23,7 @@ export function Login() {
       loading: "Processando...",
       success: (response) => {
         if (isLoginMode) {
-          setTimeout(() => navigate("/"), 1500);
+          setTimeout(() => navigate("/inicio"), 1500);
           return `Bem-vindo, ${response.data.name}!`;
         } else {
           setIsLoginMode(true);
@@ -32,9 +31,9 @@ export function Login() {
         }
       },
       error: (err) => {
-        return err.response?.data?.message || "Erro ao conectar.";
+        return err.response?.data?.message || "Erro ao conectar."; // Caso dê erro ele retorna a mensagem do backend
       },
-      // Estilizando para ficar IGUAL ao nosso tema Glass Dark
+      // Estilizando Tema Glass Dark
       style: {
         background: "rgba(0, 0, 0, 0.8)",
         backdropFilter: "blur(10px)",
@@ -46,7 +45,6 @@ export function Login() {
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
-      {/* --- AQUI ESTÁ A MÁGICA --- */}
       {/* O componente que renderiza as notificações flutuantes */}
       <Toaster
         position="top-right"
