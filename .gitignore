@@ -13,3 +13,5 @@ build/
 
 # Ignorar variáveis de ambiente (segurança)
 .env
+
+.vscode/
