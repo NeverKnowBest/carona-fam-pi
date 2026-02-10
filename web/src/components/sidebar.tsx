@@ -1,4 +1,4 @@
-import { LayoutDashboard, Wallet, Settings, LogOut } from "lucide-react";
+import { Car, ClipboardClock, Settings, LogOut } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
 export function Sidebar() {
@@ -27,8 +27,8 @@ export function Sidebar() {
 
       <nav className="flex-1 p-4 space-y-2">
         {[
-          { to: "/dashboard", icon: LayoutDashboard, label: "Dashboard" },
-          { to: "/transacoes", icon: Wallet, label: "Transações" },
+          { to: "/carona", icon: Car, label: "Carona" },
+          { to: "/historico", icon: ClipboardClock, label: "Histórico" },
           { to: "/configuracoes", icon: Settings, label: "Configurações" },
         ].map((item) => (
           <NavLink
