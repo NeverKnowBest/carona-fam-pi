@@ -1,23 +1,17 @@
-// Configurações básicas
-
 generator client {
   provider = "prisma-client-js"
 }
 
-
 datasource db {
-  provider = "mysql" // servidor sql
-  url = env("DATABASE_URL") // direciona o acesso/ip do servidor para o que foi gravado no arquivo env
+  provider = "mysql"
+  url      = env("DATABASE_URL")
 }
 
-
-// Estrutura as tabelas
-
 model users {
-  id        Int      @id @default(autoincrement())
-  name      String
-  cpf       String      @unique
-  ra        Int      @unique
-  password     String
-  created_at  DateTime @default(now())
+  id         Int      @id @default(autoincrement())
+  name       String
+  cpf        String   @unique
+  ra         Int      @unique
+  password   String
+  created_at DateTime @default(now())
 }
